@@ -42,7 +42,7 @@
                         android:id="@+id/button3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="startActivity2"
+                        android:onClick="@{() -> activity.startActivity2()}"
                         android:text="タップ制御: onTouchEvent: OnClickListenerなし"
                         app:layout_constraintTop_toBottomOf="@id/button2" />
 
@@ -50,7 +50,7 @@
                         android:id="@+id/button4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="startActivity2"
+                        android:onClick="@{() -> activity.startActivity2()}"
                         android:text="タップ制御: performClick: OnClickListenerなし"
                         app:layout_constraintTop_toBottomOf="@id/button3" />
 
