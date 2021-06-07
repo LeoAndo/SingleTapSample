@@ -53,7 +53,7 @@ fun View.setOnSingleTouchListener(touchDisablePeriod: Long = 2000L, onTouchActio
     this.setOnTouchListener { _, event ->
         // 一定期間、クリックイベント発火させない.
         if (SystemClock.elapsedRealtime() - lastTouchTime < touchDisablePeriod) {
-            Log.d("setOnSingleTouchListener", "Disable touch for a certain period.")
+            Log.d("setOnSingleTouchListener", "Disable click for a certain period.")
             // trueで、「TouchEventを消化」したことになり、クリックイベント発火させない.
             // true: 消化. false: 消化しないで、後続処理(click event等)を行う.
             return@setOnTouchListener true
