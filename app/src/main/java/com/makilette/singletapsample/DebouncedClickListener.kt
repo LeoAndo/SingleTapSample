@@ -11,7 +11,7 @@ abstract class DebouncedClickListener constructor(private var defaultInterval: L
 
     override fun onClick(v: View) {
         if (SystemClock.elapsedRealtime() - lastTimeClicked < defaultInterval) {
-            Log.d("--ando--", "クリック無効です")
+            Log.d("DebouncedClickListener", "Disable click for a certain period.")
             return
         }
         lastTimeClicked = SystemClock.elapsedRealtime()

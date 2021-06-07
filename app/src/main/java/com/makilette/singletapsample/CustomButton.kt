@@ -5,30 +5,25 @@ import android.os.SystemClock
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
-import androidx.appcompat.widget.AppCompatButton
 import com.google.android.material.button.MaterialButton
 
 /**
- * 連続タップ制御: onTouchEvent.
+ * Singletap: onTouchEvent.
  *
- * 2019-07-01 21:01:26.622 25251-25251/com.makilette.singletapsample D/--ando--: action is ACTION_UP
- * 2019-07-01 21:01:26.631 25251-25251/com.makilette.singletapsample D/MainActivity: --ando-- onClick id: 2131165218
- * 2019-07-01 21:01:26.631 25251-25251/com.makilette.singletapsample D/MainActivity: --ando-- タップ制御: onTouchEvent
- * 2019-07-01 21:01:28.334 25251-25251/com.makilette.singletapsample D/MainActivity: --ando-- startActivity
- * 2019-07-01 21:01:28.355 25251-25251/com.makilette.singletapsample D/--ando--: Disable click for a certain period.
- * 2019-07-01 21:01:28.359 25251-25251/com.makilette.singletapsample D/--ando--: Disable click for a certain period.
- * 2019-07-01 21:01:28.374 25251-25251/com.makilette.singletapsample D/--ando--: Disable click for a certain period.
- * 2019-07-01 21:01:28.377 25251-25251/com.makilette.singletapsample D/--ando--: Disable click for a certain period.
+ * 2021-06-08 00:11:22.536 13638-13638/leo.singletapsample D/CustomButton: action is ACTION_UP
+ * 2021-06-08 00:11:22.550 13638-13638/leo.singletapsample D/MainActivity: CustomButton onTouchEvent activity
+ * 2021-06-08 00:11:22.641 13638-13638/leo.singletapsample D/CustomButton: Disable click for a certain period.
+ * 2021-06-08 00:11:24.418 13638-13638/leo.singletapsample D/CustomButton: Disable click for a certain period.
+ * 2021-06-08 00:11:24.513 13638-13638/leo.singletapsample D/CustomButton: Disable click for a certain period.
+ * 2021-06-08 00:11:24.981 13638-13638/leo.singletapsample D/CustomButton: action is ACTION_UP
+ * 2021-06-08 00:11:24.994 13638-13638/leo.singletapsample D/MainActivity: CustomButton onTouchEvent activity
  *
- * 検証端末:
- * Google Pixcel3
- * OS: 9
  */
 class CustomButton(context: Context, attrs: AttributeSet) : MaterialButton(context, attrs) {
 
-    private var mLastClickTime: Long = 0
+    private var lastClickTime: Long = 0
     /** クリック無効期間. */
-    private var mClickDisablePeriod: Long = 2000
+    private var clickDisablePeriod: Long = 2000
 
     /**
      * [android.view.View.onTouchEvent]
@@ -37,8 +32,8 @@ class CustomButton(context: Context, attrs: AttributeSet) : MaterialButton(conte
      */
     override fun onTouchEvent(event: MotionEvent): Boolean {
         // 一定期間、クリックイベント発火させない.
-        if (SystemClock.elapsedRealtime() - mLastClickTime < mClickDisablePeriod) {
-            Log.d("--ando--", "Disable click for a certain period.")
+        if (SystemClock.elapsedRealtime() - lastClickTime < clickDisablePeriod) {
+            Log.d("CustomButton", "Disable click for a certain period.")
             // trueで、「TouchEventを消化」したことになり、クリックイベント発火させない.
             // true: 消化. false: 消化しないで、後続処理(click event等)を行う.
             return true
@@ -46,9 +41,9 @@ class CustomButton(context: Context, attrs: AttributeSet) : MaterialButton(conte
 
         // Viewのタッチアップ後、一定期間onClickを発火させないでダブルタップを抑止する.
         if (event.action == MotionEvent.ACTION_UP) {
-            Log.d("--ando--", "action is ACTION_UP")
+            Log.d("CustomButton", "action is ACTION_UP")
 
-            mLastClickTime = SystemClock.elapsedRealtime()
+            lastClickTime = SystemClock.elapsedRealtime()
         }
 
         // 通常のタッチイベント処理を行う.
@@ -59,6 +54,6 @@ class CustomButton(context: Context, attrs: AttributeSet) : MaterialButton(conte
      *  クリック無効期間を変更可能する.
      */
     fun setClickDisablePeriod(clickDisablePeriod: Long) {
-        this.mClickDisablePeriod = clickDisablePeriod
+        this.clickDisablePeriod = clickDisablePeriod
     }
 }
