@@ -4,7 +4,9 @@ import android.content.Context
 import android.os.SystemClock
 import android.util.AttributeSet
 import android.util.Log
+import android.widget.Button
 import androidx.appcompat.widget.AppCompatButton
+import com.google.android.material.button.MaterialButton
 
 /**
  * 連続タップ制御: performClick
@@ -22,7 +24,7 @@ import androidx.appcompat.widget.AppCompatButton
  * Google Pixcel3
  * OS: 9
  */
-class CustomAppCompatButton2(context: Context, attrs: AttributeSet) : AppCompatButton(context, attrs) {
+class CustomButton2(context: Context, attrs: AttributeSet) : MaterialButton(context, attrs) {
 
     private var mLastClickTime: Long = 0
 

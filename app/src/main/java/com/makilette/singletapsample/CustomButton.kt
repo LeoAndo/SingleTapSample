@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import androidx.appcompat.widget.AppCompatButton
+import com.google.android.material.button.MaterialButton
 
 /**
  * 連続タップ制御: onTouchEvent.
@@ -23,7 +24,7 @@ import androidx.appcompat.widget.AppCompatButton
  * Google Pixcel3
  * OS: 9
  */
-class CustomAppCompatButton(context: Context, attrs: AttributeSet) : AppCompatButton(context, attrs) {
+class CustomButton(context: Context, attrs: AttributeSet) : MaterialButton(context, attrs) {
 
     private var mLastClickTime: Long = 0
     /** クリック無効期間. */
