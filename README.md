@@ -2,4 +2,4 @@
 Double tap deterrence sample project<br>
 
 # Capture Google Pixcel3 OS:9
-<img src="https://user-images.githubusercontent.com/16476224/106280389-3128e900-6281-11eb-96ea-34d7f396387c.png" width=320 />
+<img src="https://user-images.githubusercontent.com/16476224/121043203-60330680-c7ef-11eb-8300-8ee076e55f1a.png" width=320 />
