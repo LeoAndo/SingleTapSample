@@ -7,7 +7,7 @@
 
         <variable
             name="activity"
-            type="com.makilette.singletapsample.MainActivity" />
+            type="com.leo.singletapsample.MainActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,21 +24,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.makilette.singletapsample.CustomButton
+                <com.leo.singletapsample.CustomButton
                     android:id="@+id/button1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="CustomButton onTouchEvent activity"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <com.makilette.singletapsample.CustomButton2
+                <com.leo.singletapsample.CustomButton2
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="CustomButton2 performClick activity"
                     app:layout_constraintTop_toBottomOf="@id/button1" />
 
-                <com.makilette.singletapsample.CustomButton
+                <com.leo.singletapsample.CustomButton
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
                     android:text="CustomButton onTouchEvent xml"
                     app:layout_constraintTop_toBottomOf="@id/button2" />
 
-                <com.makilette.singletapsample.CustomButton2
+                <com.leo.singletapsample.CustomButton2
                     android:id="@+id/button4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package com.makilette.singletapsample
+package com.leo.singletapsample
 
 import android.os.Bundle
 import android.widget.Toast

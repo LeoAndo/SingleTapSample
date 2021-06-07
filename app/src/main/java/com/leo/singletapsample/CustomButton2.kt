@@ -1,4 +1,4 @@
-package com.makilette.singletapsample
+package com.leo.singletapsample
 
 import android.content.Context
 import android.os.SystemClock

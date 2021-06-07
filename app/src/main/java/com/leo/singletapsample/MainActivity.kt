@@ -1,11 +1,11 @@
-package com.makilette.singletapsample
+package com.leo.singletapsample
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.makilette.singletapsample.databinding.ActivityMainBinding
+import com.leo.singletapsample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     companion object {
